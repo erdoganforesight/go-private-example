@@ -45,7 +45,7 @@ func (any *floatAny) ToUint() uint {
 	if any.val > 0 {
 		return uint(any.val)
 	}
-	return 0
+
 }
 
 func (any *floatAny) ToUint32() uint32 {
