@@ -21,7 +21,7 @@ jobs:
       if: always()
       uses: runforesight/foresight-workflow-kit-action@v1
       with:
-        api_key: ${{ secrets.F_LAB_API_KEY }}
+        api_key: 833262ba-ed1f-4b63-8ca8-901664cc501b
     - uses: actions/checkout@v3
 
     - name: Thundra Registry
@@ -45,7 +45,7 @@ jobs:
       uses: runforesight/foresight-test-kit-action@v1
       with:
         cli_version: 1111.2222.4444
-        api_key: ${{ secrets.F_LAB_API_KEY }}
+        api_key: 833262ba-ed1f-4b63-8ca8-901664cc501b
         test_framework: golang
         test_format: json
         test_path: ./test-report1.json
