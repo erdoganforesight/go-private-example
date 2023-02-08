@@ -8,10 +8,10 @@ on:
   pull_request:
   workflow_dispatch:
 env:
-  FORESIGHT_UPLOADER_SIGNER_URL: https://upload.service.runforesight.me
+  FORESIGHT_UPLOADER_SIGNER_URL: https://upload.service.runforesight.us
   ACTIONS_ALLOW_UNSECURE_COMMANDS: true
   PR_NUMBER: ${{ github.event.number }}
-  WORKFLOW_TELEMETRY_BASE_URL: https://api.service.runforesight.me
+  WORKFLOW_TELEMETRY_BASE_URL: https://api.service.runforesight.us
   
 jobs:
   build:
