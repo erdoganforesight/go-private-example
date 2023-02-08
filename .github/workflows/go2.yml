@@ -1,4 +1,4 @@
-name: Go
+name: Go2
 on:
   issue_comment:
     types:
@@ -23,23 +23,17 @@ jobs:
       with:
         api_key: 833262ba-ed1f-4b63-8ca8-901664cc501b
     - uses: actions/checkout@v3
-
     - name: Thundra Registry
       run: |
-         npm config set registry ${{ secrets.THUNDRA_REGISTRY }}
-         npm config set _auth ${{ secrets.THUNDRA_REGISTRY_AUTH }}
-
-
+        npm config set registry ${{ secrets.THUNDRA_REGISTRY }}
+        npm config set _auth ${{ secrets.THUNDRA_REGISTRY_AUTH }}
     - name: Set up Go
       uses: actions/setup-go@v3
       with:
         go-version: 1.18
-    - name: Test Go
-      run: |
-        go test -v -run Test_Sum -json ./... > ./test-report1.json -coverprofile=coverage1.out
     - name: Test Go2
       run: |
-        go test -v -run Test_Divide -json ./... > ./test-report2.json -coverprofile=coverage2.out
+          go test -v -run Test_Multiply -json ./... > ./test-report1.json -coverprofile=coverage3.out
     - name: Foresight Action
       if: success() || failure()
       uses: runforesight/foresight-test-kit-action@v1
@@ -51,7 +45,6 @@ jobs:
         test_path: ./test-report1.json
         coverage_format: golang
         coverage_path: |
-            coverage1.out
-            coverage2.out
+            coverage3.out
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
