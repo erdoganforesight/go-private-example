@@ -7,6 +7,8 @@ import (
 	"github.com/stretchr/testify/require"
 )
 
+
+
 func Test_read_empty_array_as_any(t *testing.T) {
 	should := require.New(t)
 	any := jsoniter.Get([]byte("[]"))
